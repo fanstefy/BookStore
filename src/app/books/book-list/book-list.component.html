@@ -1,0 +1,59 @@
+<div  class="m-10">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg ">
+      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-cyan-400 dark:bg-cyan-400 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="px-6 py-3 ">
+          Book Id 
+        </th>
+      <th scope="col" class="px-6 py-3 ">
+      Book Name  
+      </th>
+      <th scope="col" class="px-6 py-3">
+      Author
+      </th>
+      <th scope="col" class="px-6 py-3">
+      Date
+      </th>
+      <th scope="col" class="px-6 py-3">
+      Modified date
+      </th>
+       
+      </tr>
+      </thead>
+      <tbody  *ngFor="let book of books">
+      <tr  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+      <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+      {{book.id}}
+      </th>
+      <td class="px-6 py-4">
+        {{book.name}}
+      
+      </td>
+      <td class="px-6 py-4">
+        {{book.author}}
+     
+      </td>
+      <td class="px-6 py-4">
+        {{book.dateAdded}}
+     
+      </td>
+      <td class="px-6 py-4">
+        {{book.DateModified}}
+      </td>
+      
+      </tr>
+      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+      </tbody>
+      </table>
+      </div>
+  
+      <br>
+  
+      <div class="row">
+        <div class="col-xs-12">
+          <button (click)="addNewBook()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add Book</button>
+        </div>
+      </div>
+      
+  </div>
