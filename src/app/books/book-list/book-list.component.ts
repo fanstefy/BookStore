@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BookService } from 'src/app/book.service';
 
 @Component({
   selector: 'app-book-list',
@@ -7,46 +8,19 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
+  books: any;
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private booksService: BookService
   ) { }
 
   ngOnInit(): void {
+    this.books = this.booksService.getBooks();
   }
 
-  books = [{
-    "id": 1,
-    "name": "book 1",
-    "author": "book's author",
-    "dateAdded": "date",
-    "DateModified": "date"
-  }, {
-    "id": 2,
-    "name": "book 2",
-    "author": "book's author",
-    "dateAdded": "date",
-    "DateModified": "date"
-  }, {
-    "id": 3,
-    "name": "book 3",
-    "author": "book's author",
-    "dateAdded": "date",
-    "DateModified": "date"
-  }, {
-    "id": 4,
-    "name": "book 4",
-    "author": "book's author",
-    "dateAdded": "date",
-    "DateModified": "date"
-  }, {
-    "id": 5,
-    "name": "book 5",
-    "author": "book's author",
-    "dateAdded": "date",
-    "DateModified": "date"
-  }]
+  
 
 
   addNewBook() {
